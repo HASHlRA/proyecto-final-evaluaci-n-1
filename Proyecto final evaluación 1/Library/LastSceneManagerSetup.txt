@@ -1,0 +1,6 @@
+sceneSetups:
+- path: "C:/Users/primero/Desktop/Proyecto final evaluaci\xF3n 1/Assets/Scenes/Proyecto
+    Final.unity"
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
