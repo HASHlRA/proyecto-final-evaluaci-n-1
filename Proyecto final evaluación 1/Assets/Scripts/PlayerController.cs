@@ -8,10 +8,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 defaultPosition = new Vector3(0f, 100f, 0f);
 
     // Velocidad de movimiento
-    private float speed = 50f;
+    private float speed = 25f;
 
     // Rango máximo de movimiento
-    private float range = 200f;
+    private float xRange = 200f;
 
     // Controles verticales y horizontales
     private float verticalInput;
@@ -53,5 +53,19 @@ public class PlayerController : MonoBehaviour
         // Rota el helicoptero dependiendo del eje
         transform.Rotate(Vector3.up * speed * Time.deltaTime * horizontalInput);
         transform.Rotate(Vector3.right * speed * Time.deltaTime * verticalInput);
+
+        // Límite de pantalla derecho
+        if (transform.position.x > xRange)
+        {
+            transform.position = new Vector3(xRange, transform.position.y,
+                transform.position.z);
+        }
+
+        // Límite de pantalla izquierdo
+        if (transform.position.x < -xRange)
+        {
+            transform.position = new Vector3(-xRange, transform.position.y,
+                transform.position.z);
+        }
     }
 }

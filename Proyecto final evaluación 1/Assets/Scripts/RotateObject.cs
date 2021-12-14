@@ -12,7 +12,7 @@ public class RotateObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Rota el GameObject en el eje "y" en función de la determinada
-        transform.rotation *= Quaternion.Euler(0, speed * Time.deltaTime, 0);
+        // Rota el GameObject en el eje "x" en función de la determinada
+        transform.Rotate(new Vector3(90f, 0f, 0f) * Time.deltaTime);
     }
 }
