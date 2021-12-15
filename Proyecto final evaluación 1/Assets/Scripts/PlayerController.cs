@@ -67,5 +67,36 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(-xRange, transform.position.y,
                 transform.position.z);
         }
+
+        // Comprueba las colisiones del Player con los gameObjects
+        void OnTriggerEnter(Collider otherCollider)
+        {
+            // Si colisiona contra un obstáculo
+            if (otherCollider.gameObject.CompareTag("Obstacle"))
+            {
+                // Muestra el mensaje por consola y para el juego
+                Debug.Log("GAME OVER");
+                Time.timeScale = 0f;
+            }
+
+            // Si colisiona contra una moneda
+            if (otherCollider.gameObject.CompareTag("Coin"))
+            {
+                // Elimina (recoge) la moneda
+                Destroy(otherCollider.gameObject);
+
+                // Suma el total de monedas obetenidas
+                totalCoins++;
+
+                // Si se obtiene todas las monedas, para el juego y ganas
+                if (totalCoins >= maxCoins)
+                {
+                    Debug.Log("¡Felicidades, has recogido todas las monedas!");
+                    Time.timeScale = 0f;
+                }
+            }
+        }
+
+
     }
 }

@@ -13,7 +13,5 @@ public class MoveForward : MonoBehaviour
     {
         // Movimiento del proyectil
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
-        
     }
 }
