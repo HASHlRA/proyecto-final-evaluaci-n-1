@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3904597497393760069}
   m_Layer: 0
   m_Name: Proyectil
-  m_TagString: Untagged
+  m_TagString: Proyectil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 6617326144937477638}
   - component: {fileID: 2387142401140014675}
   - component: {fileID: 2748936241030191386}
+  - component: {fileID: 1490030888714823196}
   m_Layer: 0
   m_Name: proyectil1
   m_TagString: Untagged
@@ -171,6 +172,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1490030888714823196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475624980994005016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e037bada8194a484ab4058b6d48a1f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8529604373305833227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -248,6 +261,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6201523014160382907, guid: dec6b166a756c064b901e636609be241, type: 3}
       propertyPath: m_Name
+      value: Proyectil
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201523014160382907, guid: dec6b166a756c064b901e636609be241, type: 3}
+      propertyPath: m_TagString
       value: Proyectil
       objectReference: {fileID: 0}
     m_RemovedComponents:

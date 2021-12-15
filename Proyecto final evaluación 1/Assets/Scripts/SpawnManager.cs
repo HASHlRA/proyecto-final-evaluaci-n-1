@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         // Repite la función del SpawnsObstacle cada x tiempo
-        InvokeRepeating("spawnObstacle", timeStart, timeInterval);
+        InvokeRepeating("SpawnObstacle", timeStart, timeInterval);
     }
 
     // Función que spawnea un obstáculo en una posición aleatoria
@@ -41,7 +41,7 @@ public class SpawnManager : MonoBehaviour
     private Vector3 RandomSpawnPosition()
     {
         randomX = Random.Range(-rangeNumber, rangeNumber);
-        randomY = Random.Range(0f, rangeNumber);
+        randomY = Random.Range(-rangeNumber, rangeNumber);
         randomZ = Random.Range(-rangeNumber, rangeNumber);
 
         return new Vector3(randomX, randomY, randomZ);

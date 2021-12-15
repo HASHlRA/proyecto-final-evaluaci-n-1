@@ -69,10 +69,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // Comprueba las colisiones del Player con los gameObjects
-        void OnTriggerEnter(Collider otherCollider)
+        void OnCollisionEnter(Collision otherCollision)
         {
             // Si colisiona contra un obstáculo
-            if (otherCollider.gameObject.CompareTag("Obstacle"))
+            if (otherCollision.gameObject.CompareTag("Obstacle"))
             {
                 // Muestra el mensaje por consola y para el juego
                 Debug.Log("GAME OVER");
@@ -80,10 +80,10 @@ public class PlayerController : MonoBehaviour
             }
 
             // Si colisiona contra una moneda
-            if (otherCollider.gameObject.CompareTag("Coin"))
+            if (otherCollision.gameObject.CompareTag("Coin"))
             {
                 // Elimina (recoge) la moneda
-                Destroy(otherCollider.gameObject);
+                Destroy(otherCollision.gameObject);
 
                 // Suma el total de monedas obetenidas
                 totalCoins++;
