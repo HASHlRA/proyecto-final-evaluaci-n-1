@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6946917437172043104}
   - component: {fileID: 3904597497393760069}
   m_Layer: 0
-  m_Name: Proyectil
+  m_Name: proyectil1
   m_TagString: Proyectil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1490030888714823196}
   m_Layer: 0
   m_Name: proyectil1
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6201523014160382907, guid: dec6b166a756c064b901e636609be241, type: 3}
       propertyPath: m_Name
-      value: Proyectil
+      value: proyectil1
       objectReference: {fileID: 0}
     - target: {fileID: 6201523014160382907, guid: dec6b166a756c064b901e636609be241, type: 3}
       propertyPath: m_TagString

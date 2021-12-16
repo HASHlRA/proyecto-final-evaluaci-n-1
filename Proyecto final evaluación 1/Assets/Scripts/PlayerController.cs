@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         transform.position = defaultPosition;
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -68,35 +69,34 @@ public class PlayerController : MonoBehaviour
                 transform.position.z);
         }
 
-        // Comprueba las colisiones del Player con los gameObjects
-        void OnCollisionEnter(Collision otherCollision)
+    }
+
+    // Comprueba las colisiones del Player con los gameObject
+    private void OnCollisionEnter(Collision otherCollision)
+    {
+        // Si colisiona contra un obstáculo
+        if (otherCollision.gameObject.CompareTag("Obstacle"))
         {
-            // Si colisiona contra un obstáculo
-            if (otherCollision.gameObject.CompareTag("Obstacle"))
-            {
-                // Muestra el mensaje por consola y para el juego
-                Debug.Log("GAME OVER");
-                Time.timeScale = 0f;
-            }
-
-            // Si colisiona contra una moneda
-            if (otherCollision.gameObject.CompareTag("Coin"))
-            {
-                // Elimina (recoge) la moneda
-                Destroy(otherCollision.gameObject);
-
-                // Suma el total de monedas obetenidas
-                totalCoins++;
-
-                // Si se obtiene todas las monedas, para el juego y ganas
-                if (totalCoins >= maxCoins)
-                {
-                    Debug.Log("¡Felicidades, has recogido todas las monedas!");
-                    Time.timeScale = 0f;
-                }
-            }
+            // Muestra el mensaje por consola y para el juego
+            Debug.Log("GAME OVER");
+            Time.timeScale = 0f;
         }
 
+        // Si colisiona contra una moneda
+        if (otherCollision.gameObject.CompareTag("Coin"))
+        {
+            // Elimina (recoge) la moneda
+            Destroy(otherCollision.gameObject);
 
+            // Suma el total de monedas obetenidas
+            totalCoins++;
+
+            // Si se obtiene todas las monedas, para el juego y ganas
+            if (totalCoins >= maxCoins)
+            {
+                Debug.Log("¡Felicidades, has recogido todas las monedas!");
+                Time.timeScale = 0f;
+            }
+        }
     }
 }

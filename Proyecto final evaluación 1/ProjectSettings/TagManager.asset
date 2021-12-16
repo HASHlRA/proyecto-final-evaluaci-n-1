@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Obstacle
+  - Projectile
   - Proyectil
   layers:
   - Default
